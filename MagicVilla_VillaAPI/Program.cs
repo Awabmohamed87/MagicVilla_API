@@ -1,4 +1,5 @@
 
+using MagicVilla_VillaAPI;
 using MagicVilla_VillaAPI.Data.ApplicationDbContext;
 using MagicVilla_VillaAPI.Logging;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,8 @@ builder.Services.AddControllers(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(MappingConfig));
+
 builder.Services.AddScoped<ILogging, Logging>();
 
 
