@@ -6,6 +6,7 @@ namespace MagicVilla_VillaAPI.Data.ApplicationDbContext
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Villa> Villas_Api { get; set; }
+        public DbSet<VillaNumber> VillasNumbers { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options) 
         {
             
