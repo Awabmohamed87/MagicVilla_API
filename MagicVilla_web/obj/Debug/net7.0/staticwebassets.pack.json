@@ -5,12 +5,48 @@
       "PackagePath": "staticwebassets\\MagicVilla_web.bundle.scp.css"
     },
     {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
       "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\images\\home\\confirmation.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\confirmation.jpg"
+    },
+    {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\images\\home\\slide1.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\slide1.jpg"
+    },
+    {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\images\\home\\slide2.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\slide2.jpg"
+    },
+    {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\images\\villa\\villa1.jpg",
+      "PackagePath": "staticwebassets\\images\\villa\\villa1.jpg"
+    },
+    {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\images\\villa\\villa2.jpg",
+      "PackagePath": "staticwebassets\\images\\villa\\villa2.jpg"
+    },
+    {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\images\\villa\\villa3.jpg",
+      "PackagePath": "staticwebassets\\images\\villa\\villa3.jpg"
+    },
+    {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\images\\villa\\villa4.jpg",
+      "PackagePath": "staticwebassets\\images\\villa\\villa4.jpg"
+    },
+    {
+      "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\images\\villa\\villa5.jpg",
+      "PackagePath": "staticwebassets\\images\\villa\\villa5.jpg"
     },
     {
       "Id": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_web\\wwwroot\\js\\site.js",

@@ -1,0 +1,37 @@
+﻿@model List<VillaNumberDTO>
+
+
+<div class="container p-4 border">
+    <div class="row pb-2">
+        <div class="column">
+            <h1 class="text-primary">Villas Numbers List</h1>
+        </div>
+        <div class="col text-end pt-1">
+            <a asp-controller="VillaNumber" asp-action="CreateVillaNumber" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New Villa Number</a>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Villa Number</th>
+                <th>Villa Type</th>
+                <th>Special Details</th>
+                <th>Manage</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var villa in Model)
+            {
+                <tr>
+                    <td>@villa.VillaNo</td>
+                    <td>@villa.Villa.Name</td>
+                    <td>@villa.SpecialDetails</td>
+                    <td>
+                        <a asp-controller="VillaNumber" asp-action="UpdateVillaNumber" asp-route-villaNo="@villa.VillaNo" class="btn btn-outline-success"><i class="bi bi-pencil-fill"></i> Edit</a>
+                        <a asp-controller="VillaNumber" asp-action="DeleteVillaNumber" asp-route-villaNo="@villa.VillaNo" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Remove</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

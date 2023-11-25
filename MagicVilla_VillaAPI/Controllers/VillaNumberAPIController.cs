@@ -28,7 +28,7 @@ namespace MagicVilla_VillaAPI.Controllers
         public async Task<ActionResult<APIResponse>> GetVillasNumbers()
         {
             try { 
-                IEnumerable<VillaNumber> villas = await _villaNumberRepository.GetAllAsync(); 
+                IEnumerable<VillaNumber> villas = await _villaNumberRepository.GetAllAsync(includeProperties: "Villa"); 
                 _response.Result = _mapper.Map<List<VillaNumberDTO>>(villas);
                 _response.StatusCode = System.Net.HttpStatusCode.OK;
                 return Ok(_response);
@@ -54,7 +54,7 @@ namespace MagicVilla_VillaAPI.Controllers
                     _response.StatusCode = System.Net.HttpStatusCode.BadRequest;
                     return BadRequest(_response);
                 }
-                VillaNumber retrievedVilla = await _villaNumberRepository.GetFirstOrDefaultAsync(e => e.VillaNo == villaNumber);
+                VillaNumber retrievedVilla = await _villaNumberRepository.GetFirstOrDefaultAsync(e => e.VillaNo == villaNumber, includeProperties:"Villa");
                 if(retrievedVilla == null)
                 {
                     _response.IsSuccess = false;
@@ -83,17 +83,17 @@ namespace MagicVilla_VillaAPI.Controllers
         {
             if(villaToCreate.VillaNo == 0 || await _villaNumberRepository.GetFirstOrDefaultAsync(e => e.VillaNo == villaToCreate.VillaNo) != null)
             {
-                ModelState.AddModelError("CustomError", "Villa Number Already Exists!!");
-                /*_response.StatusCode = System.Net.HttpStatusCode.BadRequest;
-                _response.IsSuccess = false;*/
+                _response.StatusCode = System.Net.HttpStatusCode.BadRequest;
+                _response.IsSuccess = false;
+                ModelState.AddModelError("ErrorMessages", "Villa Number Already Exists!!");
                 return BadRequest(ModelState);
             }
 
             if (await _villaRepository.GetFirstOrDefaultAsync(e => e.Id == villaToCreate.VillaId) == null)
             {
-                ModelState.AddModelError("CustomError", "Villa With Id " + villaToCreate.VillaId.ToString() + " Doesn't exist!!");
-                /*_response.StatusCode = System.Net.HttpStatusCode.BadRequest;
-                _response.IsSuccess = false;*/
+                ModelState.AddModelError("ErrorMessages", "Villa With Id " + villaToCreate.VillaId.ToString() + " Doesn't exist!!");
+                _response.StatusCode = System.Net.HttpStatusCode.BadRequest;
+                _response.IsSuccess = false;
                 return BadRequest(ModelState);
             }
 

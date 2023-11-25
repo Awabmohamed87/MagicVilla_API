@@ -28,8 +28,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/Shared/_Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/VillaNumber/CreateVillaNumber.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFOdW1iZXJcQ3JlYXRlVmlsbGFOdW1iZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/VillaNumber/DeleteVillaNumber.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFOdW1iZXJcRGVsZXRlVmlsbGFOdW1iZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/VillaNumber/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFOdW1iZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/VillaNumber/UpdateVillaNumber.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFOdW1iZXJcVXBkYXRlVmlsbGFOdW1iZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/Villa/Createvilla.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFcQ3JlYXRldmlsbGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/Villa/DeleteVilla.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFcRGVsZXRlVmlsbGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/Villa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/Villa/UpdateVilla.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFcVXBkYXRlVmlsbGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Aobz/Courses Projects/MagicVilla_API/MagicVilla_web/Views/_ViewImports.cshtml]

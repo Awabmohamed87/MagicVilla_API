@@ -5,6 +5,7 @@ using MagicVilla_VillaAPI.Logging;
 using MagicVilla_VillaAPI.Models;
 using MagicVilla_VillaAPI.Models.DTO;
 using MagicVilla_VillaAPI.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +29,8 @@ namespace MagicVilla_VillaAPI.Controllers
 
         #region Get
 
-        [HttpGet]
+        [HttpGet(Name = "GetVillas")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<APIResponse>> GetVillasAsync()
         {
@@ -48,6 +50,7 @@ namespace MagicVilla_VillaAPI.Controllers
         }
 
         [HttpGet("{id:int}", Name = "GetVilla")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -83,6 +86,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
         #region Post
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -96,7 +100,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
                 if (await _repo.GetFirstOrDefaultAsync(villa => villa.Name.ToLower() == villaCreateDTO.Name.ToLower()) != null)
                 {
-                    ModelState.AddModelError("", "Villa Already Exists!");
+                    ModelState.AddModelError("ErrorMessages", "Villa Already Exists!");
                     return BadRequest(ModelState);
                 }
 
@@ -139,7 +143,7 @@ namespace MagicVilla_VillaAPI.Controllers
                 {
                     return NotFound();
                 }
-                _repo.Remove(villaToDelete);
+                await _repo.Remove(villaToDelete);
 
                 _response.StatusCode = System.Net.HttpStatusCode.NoContent;
                 _response.IsSuccess = true;
@@ -168,7 +172,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
                 Villa villaToUpdate = _mapper.Map<Villa>(villaUpdateDTO);
 
-                _repo.Update(villaToUpdate);
+                await _repo.Update(villaToUpdate);
 
                 _response.StatusCode = System.Net.HttpStatusCode.NoContent;
                 _response.IsSuccess = true;

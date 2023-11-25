@@ -163,3 +163,4 @@ F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\obj\Debug\net7.0\ref
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\obj\Debug\net7.0\MagicVilla_VillaAPI.pdb
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\obj\Debug\net7.0\MagicVilla_VillaAPI.genruntimeconfig.cache
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\obj\Debug\net7.0\ref\MagicVilla_VillaAPI.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

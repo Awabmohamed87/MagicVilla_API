@@ -5,8 +5,8 @@ namespace MagicVilla_VillaAPI.Repository.IRepository
 {
     public interface IRepository <R> where R : class
     {
-        Task<List<R>> GetAllAsync(Expression<Func<R, bool>>? expression = null);
-        Task<R> GetFirstOrDefaultAsync(Expression<Func<R, bool>>? expression = null, bool isTracking = true);
+        Task<List<R>> GetAllAsync(Expression<Func<R, bool>>? expression = null, string? includeProperties = null);
+        Task<R> GetFirstOrDefaultAsync(Expression<Func<R, bool>>? expression = null, bool isTracking = true, string? includeProperties = null);
         Task CreateAsync(R villa);
         
         Task Remove(R villa);
