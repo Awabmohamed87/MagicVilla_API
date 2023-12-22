@@ -10,5 +10,6 @@
             Put,
             Patch
         }
+        public static string SessionToken = "JWTToken";
     }
 }
