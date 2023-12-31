@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace MagicVilla_VillaAPI.Controllers
 {
@@ -32,12 +33,30 @@ namespace MagicVilla_VillaAPI.Controllers
         #region Get
 
         [HttpGet(Name = "GetVillas")]
+        [ResponseCache(Duration = 30)]
+        //[ResponseCache(CacheProfileName = "Default30")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<APIResponse>> GetVillasAsync()
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<APIResponse>> GetVillasAsync([FromQuery(Name = "Filter Occupancy")] int? Occupancy, [FromQuery] string? Search,
+            int PageSize = 0, int PageNumber = 1)
         {
             try
             {
-                IEnumerable<Villa> villas = await _repo.GetAllAsync();
+                IEnumerable<Villa> villas;
+                if(Occupancy != null && Occupancy > 0)
+                {
+                    villas = await _repo.GetAllAsync(villa => villa.Occupancy == Occupancy, PageSize: PageSize, PageNumber:PageNumber);
+                }
+                else
+                {
+                    villas = await _repo.GetAllAsync(PageSize: PageSize, PageNumber: PageNumber);
+                }
+                if (!string.IsNullOrEmpty(Search))
+                {
+                    villas = villas.Where(villa => villa.Name.ToLower().Contains(Search.ToLower()) );
+                }
+                Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(new Pagination { PageNumber = PageNumber, PageSize = PageSize }));
                 _response.Result = _mapper.Map<List<VillaDTO>>(villas);
                 _response.StatusCode = System.Net.HttpStatusCode.OK;
                 return Ok(_response);
@@ -51,6 +70,8 @@ namespace MagicVilla_VillaAPI.Controllers
         }
 
         [HttpGet("{id:int}", Name = "GetVilla")]
+        [ResponseCache(Duration = 30)]
+        //[ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)] --- No Cashing
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -61,6 +82,7 @@ namespace MagicVilla_VillaAPI.Controllers
                 if (id == 0)
                 {
                     _response.StatusCode = System.Net.HttpStatusCode.BadRequest;
+                    _response.IsSuccess = false;
                     return BadRequest(_response);
                 }
             
@@ -69,6 +91,7 @@ namespace MagicVilla_VillaAPI.Controllers
                 if (villa == null)
                 {
                     _response.StatusCode = System.Net.HttpStatusCode.NotFound;
+                    _response.IsSuccess = false;
                     return NotFound(_response);
                 }
                 _response.Result = _mapper.Map<VillaDTO>(villa);

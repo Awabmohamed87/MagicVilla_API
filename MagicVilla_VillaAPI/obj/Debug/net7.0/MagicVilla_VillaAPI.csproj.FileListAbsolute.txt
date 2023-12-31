@@ -168,3 +168,4 @@ F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Asp
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Asp.Versioning.Http.dll
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Asp.Versioning.Mvc.dll
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Asp.Versioning.Mvc.ApiExplorer.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\obj\Debug\net7.0\MagicVilla_VillaAPI.sourcelink.json

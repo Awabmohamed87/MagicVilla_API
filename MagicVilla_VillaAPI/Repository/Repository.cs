@@ -21,9 +21,21 @@ namespace MagicVilla_VillaAPI.Repository
             await SaveAsync();
         }
 
-        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> expression = null, string? includeProperties = null)
+        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> expression = null, string? includeProperties = null,
+            int PageSize = 0, int PageNumber = 1)
         {
+
             IQueryable<T> query = _dbSet;
+            if (expression != null)
+                query = query.Where(expression);
+            if (PageSize > 0)
+            {
+                if (PageSize > 100)
+                    PageSize = 100;
+
+                query = query.Skip(PageSize * (PageNumber - 1)).Take(PageSize);
+            }
+          
             if (includeProperties != null)
             {
                 foreach (var property in includeProperties.Split(',', StringSplitOptions.RemoveEmptyEntries))
@@ -31,10 +43,7 @@ namespace MagicVilla_VillaAPI.Repository
                     query = query.Include(property);
                 }
             }
-            if (expression == null)
-                return await query.ToListAsync();
-            else
-                return await query.Where(expression).ToListAsync();
+            return await query.ToListAsync();
         }
 
         public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> expression = null, bool isTracking = true, string? includeProperties = null)

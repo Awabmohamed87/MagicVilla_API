@@ -9,3 +9,4 @@ F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_Utility\obj\Debug\net7.0\Magi
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_Utility\obj\Debug\net7.0\refint\MagicVilla_Utility.dll
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.pdb
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_Utility\obj\Debug\net7.0\ref\MagicVilla_Utility.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.sourcelink.json
