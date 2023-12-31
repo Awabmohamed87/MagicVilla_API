@@ -42,15 +42,19 @@ namespace MagicVilla_web.Services
                     default:
                         httpRequestMessage.Method = HttpMethod.Patch; break;
                 }
-                HttpResponseMessage httpResponseMessage = null; 
+                HttpResponseMessage httpResponseMessage = null;
+                if (!string.IsNullOrEmpty(Request.Token))
+                {
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",Request.Token);
+                }
                 httpResponseMessage = await client.SendAsync(httpRequestMessage);
 
                 var apiContent = await httpResponseMessage.Content.ReadAsStringAsync();
                 try
                 {
                     APIResponse ApiResponse = JsonConvert.DeserializeObject<APIResponse>(apiContent);
-                    if(httpResponseMessage.StatusCode == System.Net.HttpStatusCode.BadRequest ||
-                        httpResponseMessage.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    if(ApiResponse!=null && (httpResponseMessage.StatusCode == System.Net.HttpStatusCode.BadRequest ||
+                        httpResponseMessage.StatusCode == System.Net.HttpStatusCode.NotFound))
                     {
                         ApiResponse.StatusCode = System.Net.HttpStatusCode.BadRequest;
                         ApiResponse.IsSuccess = false;

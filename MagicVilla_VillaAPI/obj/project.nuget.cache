@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "8Sd6ATnOJJW2X9PUtf+jL5JiVaT/XTJBypizFPK9eodBAA5vAvk83dommsNTfZLrtPQeWHFAJkeuyFodSTpS3A==",
+  "dgSpecHash": "JrBe/UnYij6FayrY0FpE6SXjcSwi6YkTDCvJp8s3ARXqZRaj9dOpQ6qnKEEPJJJ0DV4MBkEjoIjXnfXGkhlQaQ==",
   "success": true,
   "projectFilePath": "F:\\Aobz\\Courses Projects\\MagicVilla_API\\MagicVilla_VillaAPI\\MagicVilla_VillaAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\awabm\\.nuget\\packages\\asp.versioning.abstractions\\7.0.0\\asp.versioning.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\awabm\\.nuget\\packages\\asp.versioning.http\\7.1.0\\asp.versioning.http.7.1.0.nupkg.sha512",
+    "C:\\Users\\awabm\\.nuget\\packages\\asp.versioning.mvc\\7.1.1\\asp.versioning.mvc.7.1.1.nupkg.sha512",
+    "C:\\Users\\awabm\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\7.1.0\\asp.versioning.mvc.apiexplorer.7.1.0.nupkg.sha512",
     "C:\\Users\\awabm\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\awabm\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\awabm\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

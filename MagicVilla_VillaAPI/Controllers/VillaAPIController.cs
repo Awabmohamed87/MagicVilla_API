@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Asp.Versioning;
+using AutoMapper;
 using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Data.ApplicationDbContext;
 using MagicVilla_VillaAPI.Logging;
@@ -12,9 +13,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MagicVilla_VillaAPI.Controllers
 {
-    [Route("api/VillaAPI")]
+    [Route("api/v{version:apiVersion}/VillaAPI")]
     //[Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class VillaAPIController : ControllerBase
     {
         protected APIResponse _response;
@@ -30,7 +32,6 @@ namespace MagicVilla_VillaAPI.Controllers
         #region Get
 
         [HttpGet(Name = "GetVillas")]
-        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<APIResponse>> GetVillasAsync()
         {
@@ -50,7 +51,6 @@ namespace MagicVilla_VillaAPI.Controllers
         }
 
         [HttpGet("{id:int}", Name = "GetVilla")]
-        [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -129,6 +129,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
         #region Delete
         [HttpDelete("{id:int}", Name = "DeleteVilla")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -161,6 +162,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
         #region Put
         [HttpPut("{id:int}", Name = "UpdateVilla")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -190,6 +192,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
         #region patch
         [HttpPatch("{id:int}",Name = "UpdatePartialVilla")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

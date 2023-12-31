@@ -15,34 +15,39 @@ namespace MagicVilla_web.Services
             _villaUrl = configuration.GetValue<string>("ServiceUrls:VillaApi")??"";
         }
 
-        public Task<T> CreateAsync<T>(VillaCreateDTO villa) => SendAsync<T>(new APIRequest() { 
+        public Task<T> CreateAsync<T>(VillaCreateDTO villa, string token) => SendAsync<T>(new APIRequest() { 
             ApiType = SD.ApiType.Post,
             Data = villa,
-            Url = _villaUrl + "/api/VillaAPI"
+            Url = _villaUrl + "/api/v1/VillaAPI",
+            Token = token
         });
-        public Task<T> DeleteAsync<T>(int id) => SendAsync<T>(new APIRequest()
+        public Task<T> DeleteAsync<T>(int id, string token) => SendAsync<T>(new APIRequest()
         {
             ApiType = SD.ApiType.Delete,
-            Url = _villaUrl + "/api/VillaAPI/" + id
+            Url = _villaUrl + "/api/v1/VillaAPI/" + id,
+            Token = token
         });
 
-        public Task<T> GetAllAsync<T>() => SendAsync<T>(new APIRequest()
+        public Task<T> GetAllAsync<T>(string token) => SendAsync<T>(new APIRequest()
         {
             ApiType = SD.ApiType.Get,
-            Url = _villaUrl + "/api/VillaAPI"
+            Url = _villaUrl + "/api/v1/VillaAPI",
+            Token = token
         });
 
-        public Task<T> GetAsync<T>(int id) => SendAsync<T>(new APIRequest()
+        public Task<T> GetAsync<T>(int id, string token) => SendAsync<T>(new APIRequest()
         {
             ApiType = SD.ApiType.Get,
-            Url = _villaUrl + "/api/VillaAPI/" + id
+            Url = _villaUrl + "/api/v1/VillaAPI/" + id,
+            Token = token
         });
 
-        public Task<T> UpdateAsync<T>(VillaUpdateDTO villa) => SendAsync<T>(new APIRequest()
+        public Task<T> UpdateAsync<T>(VillaUpdateDTO villa, string token) => SendAsync<T>(new APIRequest()
         {
             ApiType = SD.ApiType.Put,
             Data = villa,
-            Url = _villaUrl + "/api/VillaAPI/" + villa.Id   
+            Url = _villaUrl + "/api/v1/VillaAPI/" + villa.Id   ,
+            Token = token
         });
     }
 }

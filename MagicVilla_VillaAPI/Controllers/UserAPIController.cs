@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Asp.Versioning;
+using AutoMapper;
 using MagicVilla_VillaAPI.Models;
 using MagicVilla_VillaAPI.Models.DTO;
 using MagicVilla_VillaAPI.Repository.IRepository;
@@ -6,9 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_VillaAPI.Controllers
 {
-    [Route("api/UserAPI")]
+    [Route("api/v{version:apiVersion}/UserAPI")]
     //[Route("api/[controller]")]
     [ApiController]
+    [ApiVersionNeutral]
     public class UserAPIController : ControllerBase
     {
         private readonly IUserRepository _userRepository;

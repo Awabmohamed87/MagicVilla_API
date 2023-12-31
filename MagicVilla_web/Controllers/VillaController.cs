@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using MagicVilla_Utility;
 using MagicVilla_web.Models;
 using MagicVilla_web.Models.DTO;
 using MagicVilla_web.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -19,24 +21,26 @@ namespace MagicVilla_web.Controllers
         public async Task<IActionResult> Index()
         {
             List<VillaDTO> list = new List<VillaDTO>();
-            var response = await _villaService.GetAllAsync<APIResponse>();
+            var response = await _villaService.GetAllAsync<APIResponse>(HttpContext.Session.GetString(SD.SessionToken));
             if(response != null && response.IsSuccess) 
             {
                 list = JsonConvert.DeserializeObject<List<VillaDTO>>(Convert.ToString(response.Result));
             }
             return View(list);
         }
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateVilla()
         {
             return View(new VillaCreateDTO());
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateVilla(VillaCreateDTO villa)
         {
             if(ModelState.IsValid)
             {
-                var response = await _villaService.CreateAsync<APIResponse>(villa);
+                var response = await _villaService.CreateAsync<APIResponse>(villa, HttpContext.Session.GetString(SD.SessionToken));
                 if(response != null && response.IsSuccess) 
                 {
                     TempData["success"] = "Villa Created Successfully";
@@ -46,9 +50,10 @@ namespace MagicVilla_web.Controllers
             TempData["failed"] = "Error Deleting Villa";
             return View(villa);
         }
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateVilla(int villaId)
         {
-            var response = await _villaService.GetAsync<APIResponse>(villaId);
+            var response = await _villaService.GetAsync<APIResponse>(villaId, HttpContext.Session.GetString(SD.SessionToken));
             if(response != null && response.IsSuccess )
             {
 
@@ -57,13 +62,14 @@ namespace MagicVilla_web.Controllers
             }
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> UpdateVilla(VillaUpdateDTO villa)
         {
             if (ModelState.IsValid)
             {
-                var response = await _villaService.UpdateAsync<APIResponse>(villa);
+                var response = await _villaService.UpdateAsync<APIResponse>(villa, HttpContext.Session.GetString(SD.SessionToken));
                 if (response != null && response.IsSuccess)
                 {
                     TempData["success"] = "Villa Updated Successfully";
@@ -73,9 +79,10 @@ namespace MagicVilla_web.Controllers
             TempData["failed"] = "Error Deleting Villa";
             return View(villa);
         }
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteVilla(int villaId)
         {
-            var response = await _villaService.GetAsync<APIResponse>(villaId);
+            var response = await _villaService.GetAsync<APIResponse>(villaId, HttpContext.Session.GetString(SD.SessionToken));
             if (response != null && response.IsSuccess)
             {
 
@@ -84,11 +91,12 @@ namespace MagicVilla_web.Controllers
             }
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteVilla(VillaDTO villa)
         {
-            var response = await _villaService.DeleteAsync<APIResponse>(villa.Id);
+            var response = await _villaService.DeleteAsync<APIResponse>(villa.Id, HttpContext.Session.GetString(SD.SessionToken));
             if (response != null && response.IsSuccess)
             {
                 TempData["success"] = "Villa Successfully Deleted";

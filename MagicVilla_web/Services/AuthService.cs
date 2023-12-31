@@ -16,7 +16,7 @@ namespace MagicVilla_web.Services
         {
             return await SendAsync<T>(new APIRequest()
             {
-                Url = url + "/api/UserAPI/Login",
+                Url = url + "/api/v1/UserAPI/Login",
                 ApiType = MagicVilla_Utility.SD.ApiType.Post,
                 Data = Request
             });
@@ -26,7 +26,7 @@ namespace MagicVilla_web.Services
         {
             return await SendAsync<T>(new APIRequest()
             {
-                Url = url + "/api/UserAPI/Register",
+                Url = url + "/api/v1/UserAPI/Register",
                 ApiType = MagicVilla_Utility.SD.ApiType.Post,
                 Data = Request
             });
