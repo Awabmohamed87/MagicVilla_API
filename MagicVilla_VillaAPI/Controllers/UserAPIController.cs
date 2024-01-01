@@ -10,6 +10,7 @@ namespace MagicVilla_VillaAPI.Controllers
     [Route("api/v{version:apiVersion}/UserAPI")]
     //[Route("api/[controller]")]
     [ApiController]
+
     [ApiVersionNeutral]
     public class UserAPIController : ControllerBase
     {

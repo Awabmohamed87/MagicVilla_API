@@ -36,3 +36,8 @@ F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\obj\Debug\net7.0\MagicVil
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\obj\Debug\net7.0\MagicVilla_web.csproj.CopyComplete
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\bin\Debug\net7.0\Newtonsoft.Json.dll
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\obj\Debug\net7.0\MagicVilla_web.sourcelink.json
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_web\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

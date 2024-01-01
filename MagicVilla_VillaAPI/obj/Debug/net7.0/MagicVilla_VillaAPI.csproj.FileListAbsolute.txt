@@ -169,3 +169,9 @@ F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Asp
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Asp.Versioning.Mvc.dll
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Asp.Versioning.Mvc.ApiExplorer.dll
 F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\obj\Debug\net7.0\MagicVilla_VillaAPI.sourcelink.json
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+F:\Aobz\Courses Projects\MagicVilla_API\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
